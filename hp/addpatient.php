@@ -36,31 +36,31 @@ if(mysqli_num_rows($query) == 1) {
 <form action="addpatientsql.php" method="post">
     <div class="form-group">
         <label for="exampleFormControlInput1">Patient name</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your patients name" name="pname">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your patients name" name="pname" required>
     </div>
     <div class="form-group">
         <label for="example-date-input" class="col-2 col-form-label">Date of birth</label>
-        <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="pbirth">
+        <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="pbirth" required>
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Anamnesis</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="panam"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="panam" required></textarea>
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea4">Diagnosis</label>
-        <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" name="pdiag"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" name="pdiag" required></textarea>
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea3">Current medications</label>
-        <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" name="pmed"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" name="pmed" required></textarea>
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea2">Current condition</label>
-        <textarea class="form-control" id="exampleFormControlTextarea2" rows="5" name="pcon"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea2" rows="5" name="pcon" required></textarea>
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea5">Current medications</label>
-        <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" name="pmed"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" name="pmed" required></textarea>
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-outline-danger">Add!</button>
