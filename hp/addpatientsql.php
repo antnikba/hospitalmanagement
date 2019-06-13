@@ -34,6 +34,7 @@ $insert = "INSERT INTO `patients` (`id`, `patient_name`, `diagnosis`, `bornon`, 
 
 if (mysqli_query($conn, $insert)) {
     echo "New record created successfully";
+    header("Location: patients.php");
 } else {
     echo "Error: " . $insert . "<br>" . mysqli_error($conn);
 }
