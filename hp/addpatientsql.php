@@ -27,16 +27,16 @@ $pmed = $_POST['pmed'];
 
 $currentdate = date('Y-m-d');
 
-echo $pname;
-echo $pbirth;
-echo $panam;
-echo $pdiag;
-echo $pmed;
-echo $pcon;
-echo $pmed;
-echo $currentdate;
 
-$insert = "INSERT INTO patients(patient_name, diagnosis, bornon, anamnesis, inthehospital, hospitalid, departmentid, nurseid, alive, medication, condition)
-VALUES ('$pname','$pdiag','$pbirth','$panam','$currentdate', '$hospital_id','$department', 0, 1, '$pmed', '$pcon')";
+$insert = "INSERT INTO `patients` (`id`, `patient_name`, `diagnosis`, `bornon`, `doctorid`, `anamnesis`, `inthehospital`, `hospitalid`, `departmentid`, `nurseid`, `alive`, `medication`, `condition`)
+ VALUES (NULL, '$pname', '$pdiag', '$pbirth', '{$_SESSION['id']}', '$panam', '$currentdate', '$hospital_id', '$department', '0', '1', '$pmed', '$pcon')";
+
+
+if (mysqli_query($conn, $insert)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $insert . "<br>" . mysqli_error($conn);
+}
+
 
 ?>

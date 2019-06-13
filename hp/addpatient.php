@@ -15,6 +15,7 @@ if(mysqli_num_rows($query) == 1) {
     }
 }
 
+$date = date("Y-m-d");
 
 ?>
 
@@ -40,7 +41,7 @@ if(mysqli_num_rows($query) == 1) {
     </div>
     <div class="form-group">
         <label for="example-date-input" class="col-2 col-form-label">Date of birth</label>
-        <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="pbirth" required>
+        <input class="form-control" type="date" value="<?php echo $date?>" id="example-date-input" name="pbirth" required>
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Anamnesis</label>

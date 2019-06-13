@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="935621d0-c5f7-4ea1-be60-bfd081aa780e" name="Webhost" url="http://files.000webhost.com">
-        <fileTransfer host="files.000webhost.com" port="21" rootFolder="/public_html">
+      <webServer id="935621d0-c5f7-4ea1-be60-bfd081aa780e" name="Webhost" url="http://ftpx.forpsi.com">
+        <fileTransfer host="ftpx.forpsi.com" port="21" rootFolder="/www/antoni">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
