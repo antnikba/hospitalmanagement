@@ -1,0 +1,14 @@
+form{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: "American Typewriter";
+    color: red;
+    background-color:green;
+
+}
+
+.submit{
+    border-radius: 20px;
+}

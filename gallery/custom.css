@@ -1,0 +1,141 @@
+/* System */
+
+.content img{
+    display: block;
+}
+.content{
+    width: 50%;
+    margin: 20px auto;
+    border-radius: 23px;
+}
+form{
+    width: 50%;
+    margin: 20px auto;
+}
+form div{
+    margin-top: 5px;
+}
+.img_div{
+    width: 80%;
+    padding: 5px;
+    margin: 15px auto;
+    border-radius: 23px;
+}
+.img_div:hover p{
+    display: block;
+}
+.img_div p{
+    display: none;
+    font-family: "American Typewriter";
+    color: red;
+}
+.img_div:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+img{
+    border-radius: 24px;
+    display: none;
+    float: left;
+    margin: 5px;
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+}
+
+body{
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.searchbarspc {
+}
+.searchbar input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+/*End*/
+
+/*HEADER AND FOOTER*/
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+}
+
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    opacity: 30%;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

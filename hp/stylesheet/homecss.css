@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Poppins&display=swap');
+
+body{
+    background-color: #F66732;
+    background: url("../bckgrnd.png");
+    background-size: 500px;
+    background-position: center;
+}
+
+.jumbotron{
+    text-align: center;
+}
