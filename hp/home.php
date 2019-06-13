@@ -1,11 +1,7 @@
 <?php
 session_start();
     require_once ('connect.php');
-    if(isset($_SESSION['loggedin'])) {
-    }else {
-        $error = 'Please log in first!';
-        echo "<script type='text/javascript'>alert('$error'); location.href='index.php';</script>";
-    }
+    require_once ('checklogin.php');
 
 
     $query = mysqli_query($conn, "SELECT * from users WHERE id='{$_SESSION['id']}'");

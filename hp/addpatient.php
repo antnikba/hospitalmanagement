@@ -3,11 +3,7 @@ session_start();
 require_once ('connect.php');
 $query = mysqli_query($conn, "SELECT * from users WHERE id='{$_SESSION['id']}'");
 
-if(isset($_SESSION['loggedin'])) {
-}else {
-    $error = 'Please log in first!';
-    echo "<script type='text/javascript'>alert('$error'); location.href='index.php';</script>";
-}
+require_once ('checklogin.php');
 
 
 if(mysqli_num_rows($query) == 1) {
@@ -40,30 +36,37 @@ if(mysqli_num_rows($query) == 1) {
 <form action="addpatientsql.php" method="post">
     <div class="form-group">
         <label for="exampleFormControlInput1">Patient name</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your patients name">
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your patients name" name="pname">
     </div>
     <div class="form-group">
         <label for="example-date-input" class="col-2 col-form-label">Date of birth</label>
-        <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+        <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="pbirth">
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Anamnesis</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="panam"></textarea>
     </div>
     <div class="form-group">
-        <label for="exampleFormControlTextarea2">Current condition</label>
-        <textarea class="form-control" id="exampleFormControlTextarea2" rows="5"></textarea>
+        <label for="exampleFormControlTextarea4">Diagnosis</label>
+        <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" name="pdiag"></textarea>
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea3">Current medications</label>
-        <textarea class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" name="pmed"></textarea>
     </div>
     <div class="form-group">
-        <label for="exampleFormControlTextarea3">Diagnosis</label>
-        <textarea class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+        <label for="exampleFormControlTextarea2">Current condition</label>
+        <textarea class="form-control" id="exampleFormControlTextarea2" rows="5" name="pcon"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea5">Current medications</label>
+        <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" name="pmed"></textarea>
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-outline-danger">Add!</button>
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-outline-danger" onclick="location.href='patients.php'">Back!</button>
     </div>
 </form>
 </div>
