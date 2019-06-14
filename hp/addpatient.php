@@ -60,10 +60,6 @@ $date = date("Y-m-d");
         <textarea class="form-control" id="exampleFormControlTextarea2" rows="5" name="pcon" required></textarea>
     </div>
     <div class="form-group">
-        <label for="exampleFormControlTextarea5">Current medications</label>
-        <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" name="pmed" required></textarea>
-    </div>
-    <div class="form-group">
         <button type="submit" class="btn btn-outline-danger">Add!</button>
     </div>
     <div class="form-group">
