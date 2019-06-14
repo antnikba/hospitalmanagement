@@ -2,22 +2,10 @@
 session_start();
     require_once ('connect.php');
     require_once ('checklogin.php');
+    require_once ('getuserinfo.php');
 
 
-    $query = mysqli_query($conn, "SELECT * from users WHERE id='{$_SESSION['id']}'");
-
-
-    if (mysqli_num_rows($query) == 1) {
-        while ($result = mysqli_fetch_assoc($query)) {
-            $user_name = $result['fullname'];
-            $hospital_id = $result['hospitalid'];
-            $work_id = $result['workid'];
-            $rank = $result['level'];
-        }
-
-    }
-
-    $query2 = mysqli_query($conn, "SELECT * from hospitals WHERE id='$hospital_id'");
+    $query2 = mysqli_query($conn, "SELECT * from hospitals WHERE id='{$_SESSION['hospital_id']}'");
 
     if(mysqli_num_rows($query2) == 1) {
         while ($result2 = mysqli_fetch_assoc($query2)) {
@@ -55,7 +43,7 @@ session_start();
             <a class="nav-link" href="patients.php">Patients</a>
         </li>
         <li class="nav-item">
-            <?php if($rank >= 3){echo '<a class="nav-link" href="#">Bedside management</a>';} ?>
+            <?php if($_SESSION['rank'] >= 3){echo '<a class="nav-link" href="#">Bedside management</a>';} ?>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Timetable</a>
@@ -70,8 +58,8 @@ session_start();
                 Profile
             </a>
             <div class="dropdown-menu">
-                <h6 class="dropdown-header"><?php echo $user_name;?></h6>
-                <?php if($rank == 4){echo '<a class="dropdown-item" href="#">Admin</a>';} ?>
+                <h6 class="dropdown-header"><?php echo $_SESSION['user_name'];?></h6>
+                <?php if($_SESSION['rank'] == 4){echo '<a class="dropdown-item" href="admin.php">Admin</a>';} ?>
                 <a class="dropdown-item" href="#">Settings</a>
                 <a class="dropdown-item" href="logout.php">Logout</a>
             </div>
@@ -83,11 +71,11 @@ session_start();
     <div class="jumbotron bg-warning">
         <h1><?php echo $hospital_name;?></h1>
         <p>You are currently <?php
-            if($rank >= 3){
-                $query = mysqli_query($conn, "SELECT * from patients WHERE doctorid='{$_SESSION['id']}' and hospitalid='$hospital_id'");
+            if($_SESSION['rank'] >= 3){
+                $query = mysqli_query($conn, "SELECT * from patients WHERE doctorid='{$_SESSION['id']}' and hospitalid='{$_SESSION['hospital_id']}'");
                 echo 'attending '.mysqli_num_rows($query). ' patient/s';
-            }elseif($rank < 3){
-                $query = mysqli_query($conn, "SELECT * from patients WHERE nurseid='{$_SESSION['id']}' and hospitalid='$hospital_id'");
+            }elseif($_SESSION['rank'] < 3){
+                $query = mysqli_query($conn, "SELECT * from patients WHERE nurseid='{$_SESSION['id']}' and hospitalid='{$_SESSION['hospital_id']}'");
                 echo 'nurseing '.mysqli_num_rows($query). ' patient/s';
             }
             ?></p>

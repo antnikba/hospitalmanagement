@@ -36,10 +36,10 @@ $result = mysqli_fetch_assoc($query);
 <div class="container-fluid bg-success">
     <form action="modify.php" method="post">
     <label for="name">Patient name:</label>
-    <input type="text" class="form-control" id="name" value="<?php echo $result['patient_name'];?>" />
+    <input type="text" class="form-control" id="name" name="name" value="<?php echo $result['patient_name'];?>" />
     <label for="name">Born On</label>
-    <input type="date" class="form-control" id="bornon" value="<?php echo $result['bornon'];?>" />
-        <button type="submit" class="btn btn-danger" name="go">Add</button>
+    <input type="date" class="form-control" id="bornon" name="bornon" value="<?php echo $result['bornon'];?>" />
+        <button type="submit" class="btn btn-danger" name="go" value="<?php echo $patientid?>">Add</button>
     </form>
 
 

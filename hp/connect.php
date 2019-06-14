@@ -2,10 +2,10 @@
 
 //MySQLi
 
-$host = 'db4free.net';
-$uname = 'antonibarnabas';
-$pass = 'password';
-$database = 'antoniftp';
+$host = 'remotemysql.com';
+$uname = 'ngDrEjUvVE';
+$pass = 'SJJuXxQSAO';
+$database = 'ngDrEjUvVE';
 
 $conn = mysqli_connect($host, $uname, $pass);
 
