@@ -1,9 +1,11 @@
 <?php
 
+session_start();
+require_once ('connect.php');
+require_once ('checklogin.php');
+
     if(isset($_POST['uname'])) {
 
-        session_start();
-        require_once ('connect.php');
         $query = mysqli_query($conn, "SELECT * FROM users WHERE name='{$_POST['uname']}'");
 
         $numrows = mysqli_num_rows($query);
@@ -18,7 +20,7 @@
                 VALUES (NULL, '{$_POST['uname']}', '$password', '{$_POST['ufname']}', '{$_POST['uhospital']}', 8, '{$_POST['urank']}', '{$_POST['udepart']}')";
             if (mysqli_query($conn, $insert)) {
                 echo "New record created successfully";
-                header("Location: patients.php");
+                header("Location: admin.php");
             } else {
                 echo "Error: " . $insert . "<br>" . mysqli_error($conn);
             }
