@@ -19,6 +19,7 @@ if($_SESSION['rank'] == 4){
     <script src="stylesheet/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+<?php include ('header.php');?>
 <div class="jumbotron bg-warning">
     <h1>ADMINPANEL</h1>
     <p>Welcome <?php echo $_SESSION['user_name'] ; ?></p>
