@@ -5,12 +5,16 @@ require_once ('connect.php');
 
 require_once ('checklogin.php');
 
+require_once ('getuserinfo.php');
+
 if(isset($_POST['anamnesisModify'])){
     $replace = "UPDATE `patients` SET anamnesis='{$_POST['anamnesisModify']}' WHERE id={$_POST['sendInfo']}";
     if(mysqli_query($conn, $replace)){
-        header("Location:patients.php");
+        $error = 'Anamnesis updated successfully!';
+        echo "<script type='text/javascript'>alert('$error'); location.href='patients.php';</script>";
     }else{
-        header("Location:panamnesis.php");
+        $error = 'Unexpected error, while updating the anamnesis. Please contact with an administrator.';
+        echo "<script type='text/javascript'>alert('$error'); location.href='home.php';</script>";
     }
 }
 
@@ -31,14 +35,10 @@ $result = mysqli_fetch_assoc($query);
 <html>
 <head>
     <title>Anamnesis - VENOM HMS</title>
-    <link href="stylesheet/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheet/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheet/css/bootstrap-reboot.min.css" rel="stylesheet" type="text/css" />
-    <script src="stylesheet/js/bootstrap.min.js"></script>
-    <script src="stylesheet/jquery-1.11.1.js"></script>
-    <script src="stylesheet/js/bootstrap.bundle.min.js"></script>
+    <?php include('bootstrap.php');?>
 </head>
 <body>
+<?php include ('header.php');?>
 <div class="jumbotron bg-info">
     <h1>Modify anamnesis</h1>
     <p>Anamnesis of <?php echo $result['patient_name'];?></p>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <!-- Brand -->
-    <a class="navbar-brand" href="home.php"><img src="<?php echo $hospital_logo;?>" alt="Logo" style="width:40px;"></a>
+    <a class="navbar-brand" href="home.php"><img src="<?php echo $_SESSION['hospital_logo'];?>" alt="Logo" style="width:40px;"></a>
 
     <!-- Links -->
     <ul class="navbar-nav">

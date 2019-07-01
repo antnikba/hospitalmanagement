@@ -17,4 +17,13 @@ if (mysqli_num_rows($query) == 1) {
 
 }
 
+$query2 = mysqli_query($conn, "SELECT * from hospitals WHERE id='{$_SESSION['hospital_id']}'");
+
+if(mysqli_num_rows($query2) == 1) {
+    while ($result2 = mysqli_fetch_assoc($query2)) {
+        $_SESSION['hospital_name'] = $result2['hospital_name'];
+        $_SESSION['hospital_logo'] = $result2['logourl'];
+    }
+}
+
 ?>
